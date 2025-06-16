@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Pro | Freelancer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .project-card:hover .project-overlay {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <nav class="bg-white shadow-lg py-4 fixed w-full z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition">Portifolio<span class="text-gray-800">Pro</span></a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-indigo-600 transition">Home</a>
+        <a href="#portfolio" class="hover:text-indigo-600 transition">Portfolio</a>
+        <a href="#services" class="hover:text-indigo-600 transition">Servizi</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-gray-800">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6">
+      <a href="#home" class="block py-2 hover:text-indigo-600 transition">Home</a>
+      <a href="#portfolio" class="block py-2 hover:text-indigo-600 transition">Portfolio</a>
+      <a href="#services" class="block py-2 hover:text-indigo-600 transition">Servizi</a>
+    </div>
+  </nav>
+
+  <section id="home" class="pt-32 pb-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+    <div class="container mx-auto px-6 text-center animate-fadeIn">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Trasformo idee in <span class="border-b-4 border-white">realtà</span></h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Fotografia, design e sviluppo web personalizzati per il tuo brand</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#portfolio" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">Portfolio</a>
+        <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition transform hover:scale-105">Contattami</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4">I miei lavori</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Esplora i progetti recenti. Clicca per ingrandire.</p>
+      
+      <div class="flex justify-center space-x-4 mb-12">
+        <button class="filter-btn px-4 py-2 rounded-full bg-indigo-600 text-white" data-category="all">Tutti</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-indigo-600 hover:text-white transition" data-category="design">Design</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-indigo-600 hover:text-white transition" data-category="photo">Fotografia</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-indigo-600 hover:text-white transition" data-category="web">Web</button>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="design">
+          <img src="https://source.unsplash.com/random/600x400/?design,branding" alt="Progetto Design" class="w-full h-64 object-cover">
+          <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-500 transform scale-95">
+            <div class="text-center p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">Brand Identity</h3>
+              <p class="mb-4">Logo e materiale grafico per startup</p>
+              <button class="view-detail px-4 py-2 bg-white text-indigo-600 rounded-full font-medium">Dettagli</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="photo">
+          <img src="https://source.unsplash.com/random/600x400/?wedding" alt="Progetto Fotografia" class="w-full h-64 object-cover">
+          <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-500 transform scale-95">
+            <div class="text-center p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">Matrimonio</h3>
+              <p class="mb-4">Servizio fotografico completo</p>
+              <button class="view-detail px-4 py-2 bg-white text-indigo-600 rounded-full font-medium">Dettagli</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="web">
+          <img src="https://source.unsplash.com/random/600x400/?website" alt="Progetto Web" class="w-full h-64 object-cover">
+          <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-500 transform scale-95">
+            <div class="text-center p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+              <p class="mb-4">Sito vetrina per negozio moda</p>
+              <button class="view-detail px-4 py-2 bg-white text-indigo-600 rounded-full font-medium">Dettagli</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+    <div class="relative max-w-4xl w-full p-4">
+      <button id="close-lightbox" class="absolute -top-12 right-0 text-white text-3xl">&times;</button>
+      <img id="lightbox-image" src="" alt="" class="w-full max-h-screen rounded-lg">
+      <div id="lightbox-caption" class="text-white text-center mt-4"></div>
+    </div>
+  </div>
+
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Cosa posso fare per te</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Fotografia Professionale</h3>
+          <p class="text-gray-600">Servizi fotografici per matrimoni, eventi e branding aziendale con post-produzione avanzata.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Graphic Design</h3>
+          <p class="text-gray-600">Creazione di logo, branding, materiale stampa e social media kit per la tua identità visiva.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Sviluppo Web</h3>
+          <p class="text-gray-600">Siti web responsive, e-commerce e applicazioni su misura con tecnologie moderne.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="text-2xl font-bold text-white">Porti<span class="text-indigo-400">folio</span></a>
+          <p class="mt-2 text-gray-400">Trasformiamo la tua visione in realtà</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; Portifolio . Made by TharisNetwork Development.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-indigo-600', 'text-white');
+          btn.classList.add('bg-gray-200', 'hover:bg-indigo-600');
+        });
+        
+        button.classList.add('bg-indigo-600', 'text-white');
+        button.classList.remove('bg-gray-200', 'hover:bg-indigo-600');
+        
+        const category = button.getAttribute('data-category');
+        
+        projectCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeIn 0.5s ease-out';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    const viewButtons = document.querySelectorAll('.view-detail');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeLightbox = document.getElementById('close-lightbox');
+    
+    viewButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const projectCard = this.closest('.project-card');
+        const imgSrc = projectCard.querySelector('img').src;
+        const title = projectCard.querySelector('h3').textContent;
+        const description = projectCard.querySelector('p').textContent;
+        
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = `${title} - ${description}`;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    closeLightbox.addEventListener('click', function() {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
+    
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.project-card, [class*="hover:-translate-y"]');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+
+  </script>
+</body>
+</html>
